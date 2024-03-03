@@ -1,6 +1,5 @@
 #!/bin/bash/python3
-"""
-This is flask app that integrates with airbnbn static html template.
+"""This is flask app that integrates with airbnbn static html template.
 """
 from flask import Flask, render_template, url_for
 from models import storage
@@ -17,16 +16,14 @@ host = '0.0.0.0'
 # start rendering flask page
 @app.teardown_appcontext
 def teardown_db(exception):
-    """
-    this method calls .close() on the current SQLAlchemy session after each request
+    """This method call .close() on the current SQLAlchemy session after each request
     """
     storage.close()
 
 
 @app.route('/0-hbnb')
 def hbnb_filters(the_id=None):
-    """
-    handle requests to custom template with, cities and amenities
+    """handle requests to custom template with, cities and amenities
     """
     state_objs = storage.all('State').values()
     states = dict([state.name, state] for state in state_objs)
