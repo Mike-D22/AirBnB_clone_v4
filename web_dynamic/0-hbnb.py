@@ -1,5 +1,5 @@
 #!/bin/bash/python3
-"""This is flask app that integrates with airbnbn static html template.
+"""This is flask app that integrate with airbnbn static html template.
 """
 from flask import Flask, render_template, url_for
 from models import storage
